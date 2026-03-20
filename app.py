@@ -177,6 +177,8 @@ def img_as_data_uri(path):
     return f"data:image/{ext};base64,{data}"
 
 img_uri = img_as_data_uri("img/imagen1.png")
+img_uri2 = img_as_data_uri("img/logo_front.png")
+img_uri3 = img_as_data_uri("img/imagen_dash.png")
 
 #silder
 st.markdown(f"""
@@ -216,7 +218,7 @@ st.markdown(f"""
 
 .image {{ width: 40%; }}
 .image img {{
-  width: 100%;ß
+  width: 100%;
   border-radius: 12px;
 }}
 
@@ -248,7 +250,7 @@ st.markdown(f"""
       <p>Transforma comportamiento en decisiones inteligentes.</p>
     </div>
     <div class="image">
-      <img src="img/imagen1.png">
+      <img src={img_uri2}>
     </div>
   </div>
 
@@ -258,7 +260,7 @@ st.markdown(f"""
       <p>Visualiza toda tu operación en una sola interfaz.</p>
     </div>
     <div class="image">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+      <img src={img_uri3}>
     </div>
   </div>
 
