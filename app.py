@@ -16,7 +16,7 @@ with st.container():
 
     with col1:
         #st.logo(img_logo, size='small', link='http://localhost:8501/')
-        st.image(img_imagen, width=100)
+        st.image(img_imagen, width=80,)
 
     with col2:
         if st.button("Inicio", use_container_width=True):
@@ -161,14 +161,16 @@ with st.container():
             st.session_state.page = "Contacto"
             st.rerun()
 
-
+st.markdown("---")
 with st.container():
     col1, col2 = st.columns(2, gap="large")
     with col1:
-        st.header("¿Qué hacemos?")
-        st.write("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando datos accionables en tiempo real que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.")
+        st.title("¿Qué hacemos?", text_alignment="justify")
+        st.caption("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando datos accionables en tiempo real que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
     with col2:
         st.image("img/Terreno.png")
+
+st.divider()
 
 # funcion para tener imagen en el slider
 def img_as_data_uri(path):
@@ -266,3 +268,60 @@ st.markdown(f"""
 
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("---")
+with st.container():
+    col1, col2 = st.columns(2, gap="large")
+    with col1:
+        st.title("Nuestras soluciones", text_alignment="justify")
+        st.caption("Instalamos sensores de última generación en casas piloto y obra para capturar datos en tiempo real sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra.", text_alignment="justify")
+    with col2:
+        st.image("img/imagen_dash.png")
+
+
+
+
+with st.container():
+    col1, col2, col3 = st.columns(3, gap="large", border=True)
+    with col1:
+        st.subheader("Benchmark online", text_alignment="justify")
+        st.caption('Ve más allá de tu proyecto, analiza el mercado y acúa a tiempo ')
+        st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="benchmark")
+    with col2:
+        st.subheader("Gestión de conversión", text_alignment="left")
+        st.caption('Encuentra oportunidades para aumentar las  utilidades de tu proyecto')
+        st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="conversion")
+    with col3:
+        st.subheader("In-proyect Tracking", text_alignment="justify")
+        st.caption('Convierte cada interacción en una oportunidad de venta o eficiencia operativa')
+        st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="obra")
+
+    st.button("Ver todas las soluciones", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="asesoria")
+st.divider()
+with st.container():
+    st.title('No reacciones por intuición, anticípate con datos', text_alignment="center")
+    st.caption('Gestiona obra y piloto con datos en tiempo real para anticipar decisiones que impactan en costos, plazos y ventas', text_alignment="center")
+    st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"))
+
+st.markdown("---")
+
+with st.container(border=True, horizontal=True, horizontal_alignment="center"):
+    st.image("img/logo4.png")
+    st.markdown("Data en vivo para decisiones inmobiliarias")
+
+st.markdown("""
+        <div style="display:flex; justify-content:center; margin-top:20px;">
+         <a href="https://instagram.com/tu_usuario" target="_blank">
+            <button style="background-color:#fffdfa; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-brands fa-instagram"></p></button>
+         </a>
+         <a href="https://wa.me/tu_numero" target="_blank">
+            <button style="background-color:#fffdfa; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-solid fa-phone"> </p></button>
+         </a>
+         <a href="mailto:tu_correo" target="_blank">
+            <button style="background-color:#fffdfa; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-solid fa-envelope"> </p></button>
+         </a>
+        </div>
+                """, unsafe_allow_html=True, text_alignment="center")
+
+st.divider()
+st.caption("© 2026 Web TI. Todos los derechos reservados.", text_alignment="center")
