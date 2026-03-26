@@ -3,47 +3,13 @@ import base64
 
 
 
-img_logo = 'img/logo4.png'
-img_imagen = 'img/logo_front.png'
+img_logo = 'img/logo1.png'
+img_imagen = 'img/img_logo1.png'
 
 # Crear navegación con columnas (alternativa más simple)
 
 st.logo(img_logo, size='large', link='http://localhost:8501/')
 
-page = None
-with st.container():
-    col1, col2, col3, col4, col5 = st.columns(5)
-
-    with col1:
-        #st.logo(img_logo, size='small', link='http://localhost:8501/')
-        st.image(img_imagen, width=80,)
-
-    with col2:
-        if st.button("Inicio", use_container_width=True):
-            page = "Inicio"
-            st.session_state.page = "Inicio"
-
-    with col3:
-        if st.button("Soluciones", use_container_width=True):
-            page = "Soluciones"
-            st.session_state.page = "Soluciones"
-
-    with col4:
-        if st.button("Nosotros", use_container_width=True):
-            page = "Nosotros"
-            st.session_state.page = "Nosotros"
-
-    with col5:
-        if st.button("Contacto", use_container_width=True):
-            page = "Contacto"
-            st.session_state.page = "Contacto"
-
-pages_dict = {
-    "Inicio": col2,
-    "Soluciones": col3,
-    "Nosotros": col4,
-    "Contacto": col5,
-}
 
 # Obtener página del estado o default
 if "page" not in st.session_state:
@@ -51,7 +17,32 @@ if "page" not in st.session_state:
 
 page = st.session_state.page
 
-st.markdown("---")
+
+with st.container():
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    with col1:
+        #st.logo(img_logo, size='small', link='http://localhost:8501/')
+        st.image(img_imagen, width=100,)
+
+    with col2:
+        if st.button("Inicio", use_container_width=True):
+            st.session_state.page = "Inicio"
+            st.rerun()
+    with col3:
+        if st.button("Soluciones", use_container_width=True):
+            st.session_state.page = "Soluciones"
+            st.rerun()
+    with col4:
+        if st.button("Nosotros", use_container_width=True):
+            st.session_state.page = "Nosotros"
+            st.rerun()
+    with col5:
+        if st.button("Contacto", use_container_width=True):
+            st.session_state.page = "Contacto"
+            st.rerun()
+
+
 
 # Mostrar contenido según la página
 # (funciones cuando se aprete el boton, tener en concideración)
@@ -68,8 +59,9 @@ st.markdown("---")
 #    st.title("⚙️ Contacto")
 #    st.write("Información de contacto")
 
+st.markdown("---")
 
-with open("video/video2.mp4", "rb") as f:
+with open("video/download.mp4", "rb") as f:
     video_bytes = f.read()
 
 video_base64 = base64.b64encode(video_bytes).decode()
@@ -85,7 +77,7 @@ st.markdown(f"""
 
 .video-container video {{
     width: 100%;
-    opacity: 0.5;
+    opacity: 0.6;
     border-radius: 10px;
 }}
 
@@ -97,7 +89,7 @@ st.markdown(f"""
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: black;
     font-size: 24px;
     text-align: center;
     font-weight: bold;
@@ -108,7 +100,7 @@ st.markdown(f"""
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: black;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
@@ -118,15 +110,14 @@ st.markdown(f"""
 
 .subtitle {{
     font-size: 1.5vw;
-    font-weight: 300;
-    opacity: 0.9;
     position: absolute;
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     width: 80%;
+    color: black;
 }}
 
 
@@ -147,7 +138,7 @@ st.markdown(f"""
         DATA EN VIVO PARA DECISIONES INMOBILIARIAS
     </div>
     <div class="subtitle">
-        Monitorea casas piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables.
+        Monitorea piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables.
     </div>
 
 </div>
@@ -166,7 +157,7 @@ with st.container():
     col1, col2 = st.columns(2, gap="large")
     with col1:
         st.title("¿Qué hacemos?", text_alignment="justify")
-        st.caption("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando datos accionables en tiempo real que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
+        st.text("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando datos accionables en tiempo real que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
     with col2:
         st.image("img/Terreno.png")
 
@@ -205,13 +196,13 @@ st.markdown(f"""
   justify-content: space-between;
   padding: 60px;
   box-sizing: border-box;
-  color: black;
+  color: white;
 }}
 
 /* Fondo */
-.slide:nth-child(1) {{ background: #fffdfa; animation-delay: 0s;}}
-.slide:nth-child(2) {{ background: #fffdfa; animation-delay: 5s;}}
-.slide:nth-child(3) {{ background: #fffdfa; animation-delay: 10s;}}
+.slide:nth-child(1) {{ background: #202020; animation-delay: 0s;}}
+.slide:nth-child(2) {{ background: #202020; animation-delay: 5s;}}
+.slide:nth-child(3) {{ background: #202020; animation-delay: 10s;}}
 
 /* Contenido */
 .text {{ width: 50%; }}
@@ -274,10 +265,9 @@ with st.container():
     col1, col2 = st.columns(2, gap="large")
     with col1:
         st.title("Nuestras soluciones", text_alignment="justify")
-        st.caption("Instalamos sensores de última generación en casas piloto y obra para capturar datos en tiempo real sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra.", text_alignment="justify")
+        st.text("Instalamos sensores de última generación en casas piloto y obra para capturar datos en tiempo real sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra.", text_alignment="justify")
     with col2:
         st.image("img/imagen_dash.png")
-
 
 
 
@@ -286,7 +276,7 @@ with st.container():
     with col1:
         st.subheader("Benchmark online", text_alignment="justify")
         st.caption('Ve más allá de tu proyecto, analiza el mercado y acúa a tiempo ')
-        st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="benchmark")
+        st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="benchmark",)
     with col2:
         st.subheader("Gestión de conversión", text_alignment="left")
         st.caption('Encuentra oportunidades para aumentar las  utilidades de tu proyecto')
@@ -300,13 +290,13 @@ with st.container():
 st.divider()
 with st.container():
     st.title('No reacciones por intuición, anticípate con datos', text_alignment="center")
-    st.caption('Gestiona obra y piloto con datos en tiempo real para anticipar decisiones que impactan en costos, plazos y ventas', text_alignment="center")
+    st.text('Obra y piloto con datos en tiempo real para anticipar decisiones que impactan en costos, plazos y ventas', text_alignment="center")
     st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"))
 
 st.markdown("---")
 
 with st.container(border=True, horizontal=True, horizontal_alignment="center"):
-    st.image("img/logo4.png")
+    st.image("img/logo1.png")
     st.markdown("Data en vivo para decisiones inmobiliarias")
 
 st.markdown("""
