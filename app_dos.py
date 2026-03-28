@@ -61,14 +61,14 @@ if page == "Inicio":
 
     .video-container video {{
          width: 100%;
-         opacity: 0.6;
+         opacity: 0.3;
          border-radius: 10px;
     }}
 
     .top_text {{
          display: flex;
-            gap: 40px;
-            letter-spacing: 1px;
+        gap: 40px;
+         letter-spacing: 1px;
          position: absolute;
          top: 25%;
          left: 50%;
@@ -137,13 +137,103 @@ if page == "Inicio":
                 st.rerun()
 
     st.markdown("---")
+
+    with st.container():
+             st.title('¿Por que? Nosotros', text_alignment="center")
+             st.markdown('##### Integramos todo en un solo flujo', text_alignment="center")
+
+
+
+    with st.container():
+        col1, col2,col3,  = st.columns(3, gap="small", border=True)
+        with col1:
+            st.markdown("""
+                        <div style="
+                        border:2px solid black;
+                        border-radius:12px;
+                        padding:15px;
+                        ">
+                        <h4>Captura de datos</h4>
+                        <p>Obtenemos los datos que realmente mueven tu negocio</p>
+                        </div>
+                        """, unsafe_allow_html=True, text_alignment="center")
+
+
+        with col2:
+            st.markdown("""
+                        <div style="
+                        border:2px solid black;
+                        border-radius:12px;
+                        padding:15px;
+                        ">
+                        <h4>Procesamiento inteligente</h4>
+                        <p>Transformamos datos en insights claros y utilizables.</p>
+                        </div>
+                        """, unsafe_allow_html=True, text_alignment="center")
+        with col3:
+            st.markdown("""
+                        <div style="
+                        border:2px solid black;
+                        border-radius:12px;
+                        padding:15px;
+                        ">
+                        <h4>Plataforma interactiva</h4>
+                        <p>Visualiza, entiende y actúa desde una sola herramienta</p>
+                        </div>
+                        """, unsafe_allow_html=True, text_alignment="center")
+
+        with st.container():
+            col1, col2,col3,  = st.columns(3, gap="small", border=True)
+        with col1:
+            st.markdown("""
+                        <div style="
+                        border:2px solid black;
+                        border-radius:12px;
+                        padding:15px;
+                        background-color:black;
+                        color:white;
+                        ">
+                        <h4>Reportes continuos</h4>
+                        <p>Información actualizada para decisiones diarias</p>
+                        </div>
+                        """, unsafe_allow_html=True, text_alignment="center")
+        with col2:
+            st.markdown("""
+                        <div style="
+                        border:2px solid black;
+                        border-radius:12px;
+                        padding:15px;
+                        background-color:black;
+                        color:white;
+                        ">
+                        <h4>Seguimiento estrategico</h4>
+                        <p>Te guiamos para convertir insights en acciones reales</p>
+                        </div>
+                        """, unsafe_allow_html=True, text_alignment="center")
+        with col3:
+            st.markdown("""
+                        <div style="
+                        border:2px solid black;
+                        border-radius:12px;
+                        padding:15px;
+                        background-color:black;
+                        color:white;
+                        ">
+                        <h4>Iteración continua</h4>
+                        <p>Optimizamos modelos y estrategias de forma constante</p>
+                        </div>
+                        """, unsafe_allow_html=True, text_alignment="center")
+
+    st.divider()
+
     with st.container():
         col1, col2 = st.columns(2, gap="large")
         with col1:
-            st.title("¿Qué hacemos?", text_alignment="justify")
-            st.text("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando datos accionables en tiempo real que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
+            st.title("¿Qué hacemos?", text_alignment="center")
+            st.markdown('##### De datos a conversión real', text_alignment='center')
         with col2:
-            st.image("img/texto3.png")
+            st.markdown("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando **datos accionables en tiempo real** que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
+
 
 
     st.divider()
@@ -154,7 +244,7 @@ if page == "Inicio":
         data = base64.b64encode(open(path, "rb").read()).decode("utf-8")
         return f"data:image/{ext};base64,{data}"
 
-    img_uri = img_as_data_uri("img/Texto4.png")
+    img_uri = img_as_data_uri("img/texto3.png")
     img_uri2 = img_as_data_uri("img/Texto4.png")
     img_uri3 = img_as_data_uri("img/imagen_dash.png")
 
@@ -164,7 +254,7 @@ if page == "Inicio":
     .slider {{
         position: relative;
         width: 100%;
-        height: 250px;
+        height: 225px;
         overflow: hidden;
         border-radius: 16px;
     }}
@@ -179,7 +269,7 @@ if page == "Inicio":
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 60px;
+        padding: 20px;
         box-sizing: border-box;
         color: white;
     }}
@@ -250,10 +340,11 @@ if page == "Inicio":
     with st.container():
         col1, col2 = st.columns(2, gap="large")
     with col1:
-        st.title("Nuestras soluciones", text_alignment="justify")
-        st.text("Instalamos sensores de última generación en casas piloto y obra para capturar datos en tiempo real sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra.", text_alignment="justify")
+        st.title("Nuestras soluciones", text_alignment="center")
+        st.markdown('##### Datos reales. Decisiones inteligentes', text_alignment='center')
     with col2:
-        st.image("img/imagen_dash.png")
+        st.markdown("Instalamos sensores de última generación en casas piloto y obra para capturar **datos en tiempo real** sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en **insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra**.", text_alignment="justify")
+    st.divider()
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
     with col1:
@@ -286,13 +377,13 @@ if page == "Inicio":
     st.markdown("""
         <div style="display:flex; justify-content:center; margin-top:20px;">
          <a href="https://instagram.com/tu_usuario" target="_blank">
-            <button style="background-color:#fffdfa; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-brands fa-instagram"></p></button>
+            <button style="background-color:#ffffff; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-brands fa-instagram"></p></button>
          </a>
          <a href="https://wa.me/tu_numero" target="_blank">
-            <button style="background-color:#fffdfa; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-solid fa-phone"> </p></button>
+            <button style="background-color:#ffffff; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-solid fa-phone"> </p></button>
          </a>
          <a href="mailto:tu_correo" target="_blank">
-            <button style="background-color:#fffdfa; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-solid fa-envelope"> </p></button>
+            <button style="background-color:#ffffff; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><p class="fa-solid fa-envelope"> </p></button>
          </a>
         </div>
                 """, unsafe_allow_html=True, text_alignment="center")
@@ -303,6 +394,8 @@ if page == "Inicio":
 elif page == "Soluciones":
     st.title("📚 Soluciones")
     st.write("Contenido de las soluciones")
+
+    st.text_area('hola', placeholder='Escribe aqui')
 elif page == "Nosotros":
     st.title("💡 Nosotros")
     st.write("Información sobre nosotros")
