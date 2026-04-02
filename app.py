@@ -606,7 +606,7 @@ elif page == "Nosotros":
     with st.container(border=True):
         col1, col2 = st.columns(2, gap="large")
         with col1:
-            st.image("img/Texto10.png", width='content')
+            st.image("img/texto10.png", width='content')
         with col2:
             st.markdown("""
                         ##### plataforma SaaS
