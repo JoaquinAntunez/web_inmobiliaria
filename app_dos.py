@@ -33,7 +33,7 @@ with st.container():
             st.session_state.page = "Soluciones"
             st.rerun()
     with col4:
-        if st.button("Nosotros", use_container_width=True):
+        if st.button("Proyecto", use_container_width=True):
             st.session_state.page = "Nosotros"
             st.rerun()
     with col5:
@@ -66,7 +66,6 @@ if page == "Inicio":
 
     .video-container video {{
          width: 100%;
-         opacity: 0.5;
          border-radius: 10px;
     }}
 
@@ -109,6 +108,28 @@ if page == "Inicio":
          color: black;
     }}
 
+     .caja_transparente2 {{
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 12px;
+            width: 80%;
+            color: black;
+            backdrop-filter: blur(2px);
+            font-size: clamp(14px, 1.2vw, 18px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh%;
+            letter-spacing: 1px;
+
+        }}
+
+
 
 
     </style>
@@ -118,17 +139,12 @@ if page == "Inicio":
             <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
         </video>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <div class="top_text">
-         <span><i class='fas fa-microchip'></i> IoT</span>
-         <span><i class='fas fa-brain'></i> AI</span>
-         <span><i class='fas fa-cloud'></i> SaaS</span>
-        </div>
-         <div class="overlay-text">
-             DATA EN VIVO PARA DECISIONES INMOBILIARIAS
-        </div>
-            <div class="subtitle">
-                Monitorea piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables.
-            </div>
+        <div class="caja_transparente2">
+            <span style='display: flex; gap: 20px;'><i class='fas fa-microchip'></i> IoT
+            <i class='fas fa-brain'></i> AI
+            <i class='fas fa-cloud'></i> SaaS</span>
+            <h3 style='text-align: center;'>DATA EN VIVO PARA DESICIONES INMOBILIARIAS</h3>
+            <p style='text-align: center;'>Monitorea piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables</p>
 
     </div>
         """, unsafe_allow_html=True)
@@ -234,8 +250,8 @@ if page == "Inicio":
     with st.container():
         col1, col2 = st.columns(2, gap="large")
         with col1:
-            st.title("¿Qué hacemos?", text_alignment="center")
-            st.markdown('##### De datos a conversión real', text_alignment='center')
+            st.title("¿Qué hacemos?")
+            st.markdown('##### De datos a conversión real')
         with col2:
             st.markdown("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando **datos accionables en tiempo real** que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
 
@@ -345,15 +361,15 @@ if page == "Inicio":
     with st.container():
         col1, col2 = st.columns(2, gap="large")
     with col1:
-        st.title("Nuestras soluciones", text_alignment="center")
-        st.markdown('##### Datos reales. Decisiones inteligentes', text_alignment='center')
+        st.title("Nuestras soluciones")
+        st.markdown('##### Datos reales. Decisiones inteligentes')
     with col2:
         st.markdown("Instalamos sensores de última generación en casas piloto y obra para capturar **datos en tiempo real** sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en **insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra**.", text_alignment="justify")
     st.divider()
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
     with col1:
-        st.subheader("Benchmark online", text_alignment="justify")
+        st.subheader("Benchmark online")
         st.caption('Ve más allá de tu proyecto, analiza el mercado y acúa a tiempo ')
         with st.popover("Mas información"):
             st.subheader("Benchmark online", text_alignment="justify")
@@ -367,7 +383,7 @@ if page == "Inicio":
             st.write("La gestión de conversión es un proceso que se enfoca en optimizar cada etapa del embudo de ventas para convertir más prospectos en clientes. Utilizando datos en tiempo real, puedes identificar puntos de fricción, mejorar la experiencia del cliente y aumentar las tasas de conversión, lo que se traduce en mayores utilidades para tu proyecto inmobiliario.")
             st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="conversion")
     with col3:
-        st.subheader("In-proyect Tracking", text_alignment="justify")
+        st.subheader("In-proyect Tracking")
         st.caption('Convierte cada interacción en una oportunidad de venta o eficiencia operativa')
         with st.popover("Mas información"):
             st.subheader("In-proyect Tracking", text_alignment="justify")
@@ -425,7 +441,7 @@ elif page == "Soluciones":
     st.title("Nuestras soluciones")
     st.markdown('##### Transformamos datos en decisiones inmobiliarias')
     with st.container(border=True):
-        st.markdown('Desde la captación de oportunidades hasta la evaluación de proyectos, nuestra plataforma centraliza y analiza información clave del mercado en tiempo real. Esto te permite reducir la incertidumbre, detectar oportunidades y optimizar cada decisión.', text_alignment="justify")
+        st.markdown('Desde la captación de oportunidades hasta la evaluación de proyectos, nuestra plataforma centraliza y analiza información clave del mercado en tiempo real. Esto te permite **reducir la incertidumbre, detectar oportunidades y optimizar cada decisión**.', text_alignment="justify")
 
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
@@ -453,7 +469,7 @@ elif page == "Soluciones":
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
         with col1:
-            st.subheader("Conteo de personas", text_alignment="justify")
+            st.subheader("Conteo de personas")
             st.caption('Monitorea el flujo de personas en tu proyecto, en tiempo real')
             with st.popover("Mas información"):
                 st.subheader("Conteo de personas", text_alignment="justify")
@@ -502,8 +518,103 @@ elif page == "Soluciones":
         st.button("Agenda una asesoría personalizada", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="asesoria2")
 
 elif page == "Nosotros":
-    st.title("💡 Nosotros")
-    st.write("Información sobre nosotros")
+    img_path = 'img/texto9.png'
+    def get_image_base64(img_path):
+        with open(img_path, "rb") as f:
+            return base64.b64encode(f.read()).decode("utf-8")
+
+
+
+    st.markdown(f"""
+    <style>
+
+        .caja_transparente {{
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 65%;
+            left: 38%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 12px;
+            width: 70%;
+            color: black;
+            backdrop-filter: blur(2px);
+            font-size: clamp(18px, 1.5vw, 22px);
+        }}
+
+        .imagen-container {{
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+        }}
+
+    }}
+    </style>
+
+    <div class="imagen-container">
+        <img src="data:image/png;base64,{get_image_base64(img_path)}"
+            style="width:100%; height:100%; object-fit:cover; border-radius:12px">
+        </img>
+        <div class="caja_transparente">
+            <h3>El futuro del monitoreo inmobiliario</h3>
+            <p>Tecnología que transorma datos en decisiones reales</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.title("El Proyecto")
+    st.markdown('##### Construyendo la nueva forma de entender el avance y comportamiento inmobiliario')
+    with st.container():
+        col1, = st.columns(1, gap="large", border=True)
+        with col1:
+            st.markdown("""
+                        Este proyecto está siendo construido desde cero con un enfoque claro: llevar inteligencia, automatización y datos en tiempo real a una industria que históricamente ha operado con incertidumbre.
+
+                        Como fundador, estoy desarrollando una plataforma que combina IoT y AI para monitorear tanto el avance de obras como el comportamiento en casas piloto, transformando estos datos en información clara, medible y accionable.
+
+                        El objetivo no es solo digitalizar procesos, sino redefinir cómo se toman decisiones en el desarrollo inmobiliario — desde la ejecución de proyectos hasta la comprensión real de cómo se habitan y utilizan los espacios."""
+                        )
+            st.button("Contáctanos", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="asesoria3")
+
+    st.divider()
+
+
+    st.title('Cómo lo hacemos')
+    with st.container(border=True):
+        col1, col2 = st.columns(2, gap="large")
+        with col1:
+            st.image("img/texto9.png", width='content')
+        with col2:
+            st.markdown("""
+                        ##### Captura de datos en terreno
+
+                        Implementamos sensores IoT para obtener información directa desde obras y casas piloto, sin depender de reportes manuales.
+                        """)
+
+    with st.container(border=True):
+        col1, col2 = st.columns(2, gap="large")
+        with col1:
+            st.image("img/texto13.png", width='content')
+        with col2:
+            st.markdown("""
+                        ##### Procesamiento inteligente
+
+                        Aplicamos modelos de inteligencia artificial para analizar los datos y detectar patrones, desviaciones y oportunidades.
+                        """)
+    with st.container(border=True):
+        col1, col2 = st.columns(2, gap="large")
+        with col1:
+            st.image("img/Texto10.png", width='content')
+        with col2:
+            st.markdown("""
+                        ##### plataforma SaaS
+
+                        Centralizamos toda la información en una plataforma fácil de usar, que entrega insights claros para la toma de decisiones.
+                        """)
+
+    st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Soluciones"), key="asesoria4")
+
 elif page == "Contacto":
     st.title("Contacto")
     st.divider()
