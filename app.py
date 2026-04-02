@@ -89,7 +89,7 @@ if page == "Inicio":
          left: 50%;
          transform: translate(-50%, -50%);
          color: black;
-         font-size: clamp(24px, 2.5vw, 42px);
+         font-size: clamp(16px, 2.5vw, 42px);
          font-weight: bold;
          text-align: center;
          width: 80%;
@@ -119,13 +119,15 @@ if page == "Inicio":
             width: 80%;
             color: black;
             backdrop-filter: blur(2px);
-            font-size: clamp(14px, 1.2vw, 18px);
+            font-size: clamp(12px, 1.2vw, 18px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh%;
             letter-spacing: 1px;
+            max-width: 90%;
+            margin: 0 auto;
 
         }}
 
@@ -416,6 +418,8 @@ elif page == "Soluciones":
             color: black;
             backdrop-filter: blur(3px);
             font-size: clamp(14px, 1.2vw, 18px);
+            max-width: 70%;
+             margin: 0 auto;
         }}
 
         .imagen-container {{
