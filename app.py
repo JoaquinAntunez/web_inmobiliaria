@@ -35,7 +35,7 @@ with st.sidebar:
 
 
 
-st.markdown("---")
+
 #muestra los iconos de fontawesome
 st.markdown("""
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,108 +43,53 @@ st.markdown("""
 
 # Mostrar contenido según la página
 if st.session_state.page == "Inicio":
-    with open("video/download.mp4", "rb") as f:
-        video_bytes = f.read()
-
-    video_base64 = base64.b64encode(video_bytes).decode()
+    img_path = 'img/inicio01.png'
+    def get_image_base64(img_path):
+        with open(img_path, "rb") as f:
+            return base64.b64encode(f.read()).decode("utf-8")
 
     #css nav_bar
     st.markdown(f"""
     <style>
 
-    .video-container {{
-         position: relative;
-         width: 100%;
-    }}
-
-    .video-container video {{
-         width: 100%;
-         border-radius: 10px;
-    }}
-
-    .top_text {{
-         display: flex;
-        gap: 40px;
-         letter-spacing: 1px;
-         position: absolute;
-         top: 25%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         color: black;
-         font-size: clamp(16px, 2vw, 22px);
-          text-align: center;
-         font-weight: bold;
-    }}
-
-    .overlay-text {{
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         color: black;
-         font-size: clamp(16px, 2.5vw, 42px);
-         font-weight: bold;
-         text-align: center;
-         width: 80%;
-
-    }}
-
-    .subtitle {{
-         font-size: 1.2vw;
-         position: absolute;
-         top: 75%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         font-size: 15px;
-         text-align: center;
-         width: 80%;
-         color: black;
-    }}
-
-     .caja_transparente2 {{
+        .caja_transparente {{
             background-color: rgba(255, 255, 255, 0.5);
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 65%;
+            left: 38%;
             transform: translate(-50%, -50%);
             padding: 20px;
             border-radius: 12px;
-            width: 80%;
+            width: 70%;
             color: black;
-            backdrop-filter: blur(2px);
-            font-size: clamp(12px, 1.2vw, 18px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh%;
-            letter-spacing: 1px;
-            max-width: 90%;
-            margin: 0 auto;
-
+            backdrop-filter: blur(3px);
+            font-size: clamp(14px, 1.2vw, 18px);
+            max-width: 70%;
+             margin: 0 auto;
         }}
 
+        .imagen-container {{
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+        }}
 
-
-
+    }}
     </style>
 
-    <div class="video-container">
-        <video autoplay loop muted>
-            <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
-        </video>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <div class="caja_transparente2">
-            <span style='display: flex; gap: 20px;'><i class='fas fa-microchip'></i> IoT
-            <i class='fas fa-brain'></i> AI
-            <i class='fas fa-cloud'></i> SaaS</span>
-            <h3 style='text-align: center;'>DATA EN VIVO PARA DESICIONES INMOBILIARIAS</h3>
-            <p style='text-align: center;'>Monitorea piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables</p>
-
+    <div class="imagen-container">
+        <img src="data:image/png;base64,{get_image_base64(img_path)}"
+            style="width:100%; height:100%; object-fit:cover; border-radius:12px">
+        </img>
+        <div class="caja_transparente">
+            <h3>Inteligencia de datos para proyectos inmobiliarios</h3>
+            <p>Toma decisiones con información real y actualizada</p>
     </div>
-        """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-
+    st.markdown('')
     with st.container():
         col1, = st.columns(1, gap="large")
         with col1:
@@ -152,7 +97,6 @@ if st.session_state.page == "Inicio":
                 st.session_state.page = "Soluciones"
                 st.rerun()
 
-    st.markdown("---")
 
     with st.container():
              st.title('¿Por que? Nosotros', text_alignment="center")
