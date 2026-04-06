@@ -18,28 +18,44 @@ page = st.session_state.page
 
 
 with st.container():
-    col1, col2, col3, col4, col5 = st.columns(5)
+    col1, col2, col3, col4, col5 = st.columns([1, 2, 2, 2, 2])
 
     with col1:
         #st.logo(img_logo, size='small', link='http://localhost:8501/')
         st.image(img_imagen, width=100,)
 
-    with col2:
-        if st.button("Inicio", use_container_width=True):
-            st.session_state.page = "Inicio"
-            st.rerun()
-    with col3:
-        if st.button("Soluciones", use_container_width=True):
-            st.session_state.page = "Soluciones"
-            st.rerun()
-    with col4:
-        if st.button("Proyecto", use_container_width=True):
-            st.session_state.page = "Nosotros"
-            st.rerun()
-    with col5:
-        if st.button("Contacto", use_container_width=True):
-            st.session_state.page = "Contacto"
-            st.rerun()
+    is_mobile = st.query_params.get("screen_width", 1200) < 768
+
+    if is_mobile:
+        with col5:
+            menu = st.selectbox(
+                'Menu',
+                ['Inicio', 'Soluciones', 'Proyecto', 'Contacto'],
+                label_visibility="collapsed",
+                key="mobile_menu_navbar"
+            )
+            if menu:
+                st.session_state.page = 'Nosotros' if menu == "Proyecto" else menu
+                st.rerun()
+
+    else:
+        with col2:
+            if st.button("Inicio", use_container_width=True, key='btn_inicio_navbar'):
+                st.session_state.page = "Inicio"
+                st.rerun()
+        with col3:
+            if st.button("Soluciones", use_container_width=True, key='btn_soluciones_navbar'):
+                st.session_state.page = "Soluciones"
+                st.rerun()
+        with col4:
+            if st.button("Proyecto", use_container_width=True, key='btn_proyecto_navbar'):
+                st.session_state.page = "Nosotros"
+                st.rerun()
+        with col5:
+            if st.button("Contacto", use_container_width=True):
+                st.session_state.page = "Contacto"
+                st.rerun()
+
 
 
 st.markdown("---")
@@ -50,10 +66,12 @@ st.markdown("""
 
 # Mostrar contenido según la página
 if page == "Inicio":
-    with open("video/download.mp4", "rb") as f:
-        video_bytes = f.read()
 
-    video_base64 = base64.b64encode(video_bytes).decode()
+
+
+    with open("video/download.mp4", "rb") as f:
+        video_data = f.read()
+    video_base64 = base64.b64encode(video_data).decode("utf-8")
 
     #css nav_bar
     st.markdown(f"""
@@ -62,91 +80,102 @@ if page == "Inicio":
     .video-container {{
          position: relative;
          width: 100%;
+         aspect-ratio: 16/9;
+         overflow: hidden;
+         border-radius: 10px;
+         background-color: #000;
     }}
 
     .video-container video {{
          width: 100%;
+         height: 100%;
+         object-fit: cover;
          border-radius: 10px;
+         display: block;
     }}
 
-    .top_text {{
-         display: flex;
-        gap: 40px;
-         letter-spacing: 1px;
-         position: absolute;
-         top: 25%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         color: black;
-         font-size: clamp(16px, 2vw, 22px);
-          text-align: center;
-         font-weight: bold;
+    .video-container img {{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
     }}
 
-    .overlay-text {{
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         color: black;
-         font-size: clamp(16px, 2.5vw, 42px);
-         font-weight: bold;
-         text-align: center;
-         width: 80%;
-
-    }}
-
-    .subtitle {{
-         font-size: 1.2vw;
-         position: absolute;
-         top: 75%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         font-size: 15px;
-         text-align: center;
-         width: 80%;
-         color: black;
-    }}
 
      .caja_transparente2 {{
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.7);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 20px;
             border-radius: 12px;
-            width: 80%;
+            width: 90%;
             color: black;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(5px);
             font-size: clamp(12px, 1.2vw, 18px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh%;
             letter-spacing: 1px;
-            max-width: 90%;
-            margin: 0 auto;
+            max-width: 600px;
+            z-index: 10;
 
         }}
 
+    .caja_transparente2 span {{
+        display: flex;
+         gap: 15px;
+         margin-bottom: 15px;
+         flex-wrap: wrap;
+         justify-content: center;
+         font-size: clamp(14px, 1.5vw, 16px);
 
+    }}
+
+    .caja_transparente2 h3 {{
+        font-size: clamp(18px, 2.5vw, 32px);
+         margin: 10px 0;
+         text-align: center;
+    }}
+
+    .caja_transparente2 p {{
+        font-size: clamp(12px, 1vw, 16px);
+         text-align: center;
+         margin: 10px 0 0 0;
+    }}
+
+    @media (max-width: 768px) {{
+        .caja_transparente2 {{
+            padding: 15px;
+            width: 85%;
+        }}
+        .caja_transparente2 span {{
+            gap: 10px;
+            font-size: 12px;
+        }}
+    }}
 
 
     </style>
 
     <div class="video-container">
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline>
             <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
+            <img src="data:img/inicio07.png" style="width: 100%; height: 100%; object-fit: cover;">
         </video>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <div class="caja_transparente2">
-            <span style='display: flex; gap: 20px;'><i class='fas fa-microchip'></i> IoT
-            <i class='fas fa-brain'></i> AI
-            <i class='fas fa-cloud'></i> SaaS</span>
-            <h3 style='text-align: center;'>DATA EN VIVO PARA DESICIONES INMOBILIARIAS</h3>
-            <p style='text-align: center;'>Monitorea piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables</p>
+            <span>
+                <i class='fas fa-microchip'></i> IoT
+                <i class='fas fa-brain'></i> AI
+                <i class='fas fa-cloud'></i> SaaS
+            </span>
+            <h3>DATA EN VIVO PARA DESICIONES INMOBILIARIAS</h3>
+            <p>Monitorea piloto y obra con tecnología que convierte lo que pasa en terreno en insights accionables</p>
+        </div>
 
     </div>
         """, unsafe_allow_html=True)
@@ -155,7 +184,7 @@ if page == "Inicio":
     with st.container():
         col1, = st.columns(1, gap="large")
         with col1:
-            if st.button("Revisa nuestras soluciones", use_container_width=True):
+            if st.button("Revisa nuestras soluciones", use_container_width=True, key='btn_soluciones_cta'):
                 st.session_state.page = "Soluciones"
                 st.rerun()
 
