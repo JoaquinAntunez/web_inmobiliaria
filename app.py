@@ -207,9 +207,9 @@ if st.session_state.page == "Inicio":
         col1, col2 = st.columns(2, gap="large")
         with col1:
             st.title("¿Qué hacemos?")
-            st.markdown('##### De datos a conversión real')
+            st.markdown('##### De datos a ventas reales')
         with col2:
-            st.markdown("Capturamos el comportamiento en espacios físicos (casa piloto y obra) a través de dispositivos inteligentes de alta precisión, entregando **datos accionables en tiempo real** que permiten optimizar ventas, eficientizar operaciones y mejorar la experiencia de compra y avance en obra.", text_alignment="justify")
+            st.markdown("Capturamos el comportamiento en casas piloto y proyectos en construcción para transformarlo en decisiones que **aumentan conversiones, optimizan operaciones y mejoran la experiencia de compra**.", text_alignment="justify")
 
 
 
@@ -318,9 +318,9 @@ if st.session_state.page == "Inicio":
         col1, col2 = st.columns(2, gap="large")
     with col1:
         st.title("Nuestras soluciones")
-        st.markdown('##### Datos reales. Decisiones inteligentes')
+        st.markdown('##### Inteligencia en tiempo real para proyectos inmobiliarios')
     with col2:
-        st.markdown("Instalamos sensores de última generación en casas piloto y obra para capturar **datos en tiempo real** sobre el comportamiento de los espacios. Nuestra plataforma SaaS procesa esta información utilizando inteligencia artificial, transformándola en **insights accionables que optimizan ventas, eficientizan operaciones y mejoran la experiencia de compra y avance en obra**.", text_alignment="justify")
+        st.markdown("Implementamos **sensores de alta precisión en casas piloto y obra** para capturar datos del comportamiento de los espacios. Nuestra plataforma procesa esta información en tiempo real y la convierte en insights accionables que permiten optimizar estrategias comerciales, mejorar la operación y tomar decisiones basadas en evidencia.", text_alignment="justify")
     st.divider()
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
