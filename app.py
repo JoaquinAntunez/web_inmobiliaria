@@ -71,7 +71,7 @@ if st.session_state.page == "Inicio":
         .imagen-container {{
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 600px;
             overflow: hidden;
             border-radius: 12px;
         }}
