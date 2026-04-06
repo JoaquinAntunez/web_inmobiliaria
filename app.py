@@ -21,6 +21,29 @@ is_mobile_css = st.markdown("""
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 """, unsafe_allow_html=True)
 
+#agregamos css global para navbar respónsiva
+st.markdown("""
+<style>
+    .navbar-desktop {
+        display: flex;
+    }
+
+    .navbar-mobile {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-desktop {
+            display: none !important;
+        }
+
+        .navbar-mobile {
+            display: flex !important;
+        }
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 with st.container():
     col1, col2, col3, col4, col5 = st.columns([1, 2, 2, 2, 2])
@@ -31,7 +54,7 @@ with st.container():
 
 
     with col2:
-        if st.button("Inicio", use_container_width=True, key='btn_inicio_navbar'):
+        if st.button("Inicio", use_container_width=True, key='btn_inicio_navbar', help=None):
                 st.session_state.page = "Inicio"
                 st.rerun()
     with col3:
@@ -48,17 +71,55 @@ with st.container():
                 st.rerun()
 
 
-# MENÜ MÓVIL ADICIONAL(oculto en desktop)
+# VERSIÓN MOBILE (visible solo en pantallas < 768px)
+st.markdown("""
+<style>
+    @media (max-width: 768px) {
+        .navbar-mobile-container {
+            display: block !important;
+            width: 100%;
+        }
+    }
 
+    @media (min-width: 769px) {
+        .navbar-mobile-container {
+            display: none !important;
+        }
+    }
+</style>
+<div class="navbar-mobile-container">
+</div>
+""", unsafe_allow_html=True)
+
+# Selectbox para mobile (solo se renderiza en mobile via CSS)
+col_mobile = st.columns(1)[0]
+with col_mobile:
     st.markdown("""
-         <style>
-            @media (max-width: 768px) {
-                [data-testid="column"] button {
-                 display: none;
-                }
-         }
-            </style>
-         """, unsafe_allow_html=True)
+    <style>
+        @media (max-width: 768px) {
+            [data-testid="element-container"] > div:last-child {
+                display: block !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            [data-testid="element-container"] > div:last-child {
+                display: none !important;
+            }
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+    menu = st.selectbox(
+        'Menú',
+        ['Inicio', 'Soluciones', 'Proyecto', 'Contacto'],
+        label_visibility="collapsed",
+        key='mobile_menu_navbar'
+    )
+
+    if menu:
+        st.session_state.page = 'Nosotros' if menu == 'Proyecto' else menu
+        st.rerun()
 
 
 st.markdown("---")
