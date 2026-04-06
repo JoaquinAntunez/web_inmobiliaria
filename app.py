@@ -216,6 +216,7 @@ if page == "Inicio":
             aspect-ratio: auto;
             min-height: 400px;
             max-width: 100%;
+        }}
 
         .caja_transparente2 {{
             padding: 15px;
