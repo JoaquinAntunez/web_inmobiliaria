@@ -17,29 +17,22 @@ if "page" not in st.session_state:
 page = st.session_state.page
 
 
-with st.container():
-    col1, col2, col3, col4, col5 = st.columns(5)
+with st.sidebar:
+    st.title("Menú")
 
-    with col1:
-        #st.logo(img_logo, size='small', link='http://localhost:8501/')
-        st.image(img_imagen, width=100,)
+    if st.button("Inicio", use_container_width=True):
+        st.session_state.page = "Inicio"
+        st.rerun()
+    if st.button("Soluciones", use_container_width=True):
+        st.session_state.page = "Soluciones"
+        st.rerun()
+    if st.button("Proyecto", use_container_width=True):
+        st.session_state.page = "Nosotros"
+        st.rerun()
+    if st.button("Contacto", use_container_width=True):
+        st.session_state.page = "Contacto"
+        st.rerun()
 
-    with col2:
-        if st.button("Inicio", use_container_width=True):
-            st.session_state.page = "Inicio"
-            st.rerun()
-    with col3:
-        if st.button("Soluciones", use_container_width=True):
-            st.session_state.page = "Soluciones"
-            st.rerun()
-    with col4:
-        if st.button("Proyecto", use_container_width=True):
-            st.session_state.page = "Nosotros"
-            st.rerun()
-    with col5:
-        if st.button("Contacto", use_container_width=True):
-            st.session_state.page = "Contacto"
-            st.rerun()
 
 
 st.markdown("---")
@@ -49,7 +42,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Mostrar contenido según la página
-if page == "Inicio":
+if st.session_state.page == "Inicio":
     with open("video/download.mp4", "rb") as f:
         video_bytes = f.read()
 
@@ -396,7 +389,7 @@ if page == "Inicio":
     st.divider()
 
 
-elif page == "Soluciones":
+elif st.session_state.page == "Soluciones":
 
     img_path = 'img/soluciones_img.png'
     def get_image_base64(img_path):
@@ -522,7 +515,7 @@ elif page == "Soluciones":
     with st.container():
         st.button("Agenda una asesoría personalizada", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="asesoria2")
 
-elif page == "Nosotros":
+elif st.session_state.page == "Nosotros":
     img_path = 'img/proyecto05.png'
     def get_image_base64(img_path):
         with open(img_path, "rb") as f:
@@ -620,7 +613,7 @@ elif page == "Nosotros":
 
     st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Soluciones"), key="asesoria4")
 
-elif page == "Contacto":
+elif st.session_state.page == "Contacto":
     img_path2 = 'img/contacto02.png'
     def get_image_base64(img_path2):
         with open(img_path2, "rb") as f:
