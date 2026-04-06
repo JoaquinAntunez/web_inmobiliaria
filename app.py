@@ -77,6 +77,16 @@ if st.session_state.page == "Inicio":
             border-radius: 12px;
         }}
 
+        .icons-container {{
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: clamp(14px, 1.2vw, 18px);
+            color: black;
+            text-transform: none;
+        }}
+
     }}
     </style>
 
@@ -85,8 +95,14 @@ if st.session_state.page == "Inicio":
             style="width:100%; height:100%; object-fit:cover; border-radius:12px">
         </img>
         <div class="caja_transparente">
+            <div class="icons-container">
+                <i class="fa-solid fa-microchip"> IoT</i>
+                <i class="fa-solid fa-brain"> AI</i>
+                <i class="fa-solid fa-cloud"> SaaS</i>
+            </div>
             <h3>DATOS REALES. DECISIONES INTELIGENTES</h3>
             <p>Monitorea casas piloto y construcción en tiempo real para optimizar tu estrategia comercial.</p>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
