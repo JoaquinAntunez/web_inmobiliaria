@@ -15,6 +15,23 @@ if "page" not in st.session_state:
     st.session_state.page = "Inicio"
 
 page = st.session_state.page
+#agregamos ancho de pantalla en js para hacer la pagina responsive
+st.markdown("""
+<script>
+    function getScreenWidth() {
+        window.streamlit.setComponentValue(window.innerWidth);
+    }
+    getScreenWidth();
+    window.addEventListener('resize', getScreenWidth);
+</script>
+""", unsafe_allow_html=True)
+
+if "screen_width" not in st.session_state:
+    st.session_state.screen_width = 1200
+
+is_mobile = st.session_state.get("screen_width", 1200) < 768
+
+
 
 
 with st.container():
@@ -151,20 +168,28 @@ if page == "Inicio":
         .caja_transparente2 {{
             padding: 15px;
             width: 85%;
+            max-width: 90%;
         }}
         .caja_transparente2 span {{
             gap: 10px;
             font-size: 12px;
         }}
-    }}
 
+        .caja_transparente2 h3 {{
+            font-size: 20px;
+        }}
+
+        .caja_transparente2 p {{
+            font-size: 13px;
+        }}
+    }}
 
     </style>
 
     <div class="video-container">
         <video autoplay loop muted playsinline>
             <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
-            <img src="data:img/inicio07.png" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="img/inicio07.png" style="width: 100%; height: 100%; object-fit: cover;">
         </video>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <div class="caja_transparente2">
