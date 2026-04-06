@@ -15,23 +15,11 @@ if "page" not in st.session_state:
     st.session_state.page = "Inicio"
 
 page = st.session_state.page
-#agregamos ancho de pantalla en js para hacer la pagina responsive
-st.markdown("""
-<script>
-    function getScreenWidth() {
-        window.streamlit.setComponentValue(window.innerWidth);
-    }
-    getScreenWidth();
-    window.addEventListener('resize', getScreenWidth);
-</script>
+
+#creamos dos versiones web 7 mobile
+is_mobile_css = st.markdown("""
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 """, unsafe_allow_html=True)
-
-if "screen_width" not in st.session_state:
-    st.session_state.screen_width = 1200
-
-is_mobile = st.session_state.get("screen_width", 1200) < 768
-
-
 
 
 with st.container():
@@ -41,36 +29,36 @@ with st.container():
         #st.logo(img_logo, size='small', link='http://localhost:8501/')
         st.image(img_imagen, width=100)
 
-    if is_mobile:
-        with col5:
-            menu = st.selectbox(
-                'Menu',
-                ['Inicio', 'Soluciones', 'Proyecto', 'Contacto'],
-                label_visibility="collapsed",
-                key="mobile_menu_navbar"
-            )
-            if menu:
-                st.session_state.page = 'Nosotros' if menu == "Proyecto" else menu
-                st.rerun()
 
-    else:
-        with col2:
-            if st.button("Inicio", use_container_width=True, key='btn_inicio_navbar'):
+    with col2:
+        if st.button("Inicio", use_container_width=True, key='btn_inicio_navbar'):
                 st.session_state.page = "Inicio"
                 st.rerun()
-        with col3:
-            if st.button("Soluciones", use_container_width=True, key='btn_soluciones_navbar'):
+    with col3:
+        if st.button("Soluciones", use_container_width=True, key='btn_soluciones_navbar'):
                 st.session_state.page = "Soluciones"
                 st.rerun()
-        with col4:
-            if st.button("Proyecto", use_container_width=True, key='btn_proyecto_navbar'):
+    with col4:
+        if st.button("Proyecto", use_container_width=True, key='btn_proyecto_navbar'):
                 st.session_state.page = "Nosotros"
                 st.rerun()
-        with col5:
-            if st.button("Contacto", use_container_width=True):
+    with col5:
+        if st.button("Contacto", use_container_width=True, key='btn_contacto_navbar'):
                 st.session_state.page = "Contacto"
                 st.rerun()
 
+
+# MENÜ MÓVIL ADICIONAL(oculto en desktop)
+
+    st.markdown("""
+         <style>
+            @media (max-width: 768px) {
+                [data-testid="column"] button {
+                 display: none;
+                }
+         }
+            </style>
+         """, unsafe_allow_html=True)
 
 
 st.markdown("---")
@@ -81,8 +69,6 @@ st.markdown("""
 
 # Mostrar contenido según la página
 if page == "Inicio":
-
-
 
     with open("video/download.mp4", "rb") as f:
         video_data = f.read()
@@ -99,6 +85,7 @@ if page == "Inicio":
          overflow: hidden;
          border-radius: 10px;
          background-color: #000;
+         max-height: 90vh;
     }}
 
     .video-container video {{
@@ -163,6 +150,12 @@ if page == "Inicio":
     }}
 
     @media (max-width: 768px) {{
+
+        .video-container {{
+            aspect-ratio: auto;
+            min-height: 400px;
+            max-width: 100%;
+
         .caja_transparente2 {{
             padding: 15px;
             width: 85%;
