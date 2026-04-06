@@ -39,9 +39,7 @@ with st.container():
 
     with col1:
         #st.logo(img_logo, size='small', link='http://localhost:8501/')
-        st.image(img_imagen, width=100,)
-
-    is_mobile = st.query_params.get("screen_width", 1200) < 768
+        st.image(img_imagen, width=100)
 
     if is_mobile:
         with col5:
