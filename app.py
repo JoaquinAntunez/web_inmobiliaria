@@ -84,8 +84,8 @@ if st.session_state.page == "Inicio":
             style="width:100%; height:100%; object-fit:cover; border-radius:12px">
         </img>
         <div class="caja_transparente">
-            <h3>Inteligencia de datos para proyectos inmobiliarios</h3>
-            <p>Toma decisiones con información real y actualizada</p>
+            <h3>TRANSFORMA DATOS EN DECISIONES INMOBILIARIAS REALES</h3>
+            <p>Visualiza el comportamiento en casas piloto y el avance en obra en tiempo real para vender mejor y más rápido</p>
     </div>
     """, unsafe_allow_html=True)
 
