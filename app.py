@@ -85,8 +85,8 @@ if st.session_state.page == "Inicio":
             style="width:100%; height:100%; object-fit:cover; border-radius:12px">
         </img>
         <div class="caja_transparente">
-            <h3>TRANSFORMA DATOS EN DECISIONES INMOBILIARIAS REALES</h3>
-            <p>Visualiza el comportamiento en casas piloto y el avance en obra en tiempo real para vender mejor y más rápido</p>
+            <h3>DATOS REALES. DECISIONES INTELIGENTES</h3>
+            <p>Monitorea casas piloto y construcción en tiempo real para optimizar tu estrategia comercial.</p>
     </div>
     """, unsafe_allow_html=True)
 
