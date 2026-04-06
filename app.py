@@ -651,7 +651,7 @@ elif page == "Nosotros":
             width: 70%;
             color: black;
             backdrop-filter: blur(3px);
-            font-size: clamp(14px, 1.2vw, 18px;)
+            font-size: clamp(14px, 1.2vw, 18px);
         }}
 
         .imagen-container {{
