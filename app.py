@@ -100,8 +100,8 @@ if st.session_state.page == "Inicio":
                 <i class="fa-solid fa-brain"> AI</i>
                 <i class="fa-solid fa-cloud"> SaaS</i>
             </div>
-            <h3>DATOS REALES. DECISIONES INTELIGENTES</h3>
-            <p>Monitorea casas piloto y construcción en tiempo real para optimizar tu estrategia comercial.</p>
+            <h3>TRANSFORMA DATOS EN VENTAS</h3>
+            <p>Convierte el comportamiento en casas piloto y el avance de obra en decisiones que impulsan resultados reales.</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -339,10 +339,10 @@ if st.session_state.page == "Inicio":
             st.write("La gestión de conversión es un proceso que se enfoca en optimizar cada etapa del embudo de ventas para convertir más prospectos en clientes. Utilizando datos en tiempo real, puedes identificar puntos de fricción, mejorar la experiencia del cliente y aumentar las tasas de conversión, lo que se traduce en mayores utilidades para tu proyecto inmobiliario.")
             st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="conversion")
     with col3:
-        st.subheader("In-proyect Tracking")
+        st.subheader("In-project Tracking")
         st.caption('Convierte cada interacción en una oportunidad de venta o eficiencia operativa')
         with st.popover("Mas información"):
-            st.subheader("In-proyect Tracking", text_alignment="justify")
+            st.subheader("In-project Tracking", text_alignment="justify")
             st.write("El In-project Tracking es una solución que permite monitorear en tiempo real el comportamiento de los usuarios dentro de tu proyecto inmobiliario. A través de sensores y dispositivos inteligentes, puedes capturar datos sobre cómo los prospectos interactúan con los espacios, lo que te brinda insights valiosos para mejorar la experiencia del cliente, optimizar operaciones y aumentar las oportunidades de venta.")
             st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="tracking")
 
@@ -419,10 +419,10 @@ elif st.session_state.page == "Soluciones":
                 st.write("La gestión de conversión es un proceso que se enfoca en optimizar cada etapa del embudo de ventas para convertir más prospectos en clientes. Utilizando datos en tiempo real, puedes identificar puntos de fricción, mejorar la experiencia del cliente y aumentar las tasas de conversión, lo que se traduce en mayores utilidades para tu proyecto inmobiliario.")
                 st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="conversion2")
         with col3:
-            st.subheader("In-proyect Tracking", text_alignment="justify")
+            st.subheader("In-project Tracking", text_alignment="justify")
             st.caption('Convierte cada interacción en una oportunidad de venta o eficiencia operativa')
             with st.popover("Mas información"):
-                st.subheader("In-proyect Tracking", text_alignment="justify")
+                st.subheader("In-project Tracking", text_alignment="justify")
                 st.write("El In-project Tracking es una solución que permite monitorear en tiempo real el comportamiento de los usuarios dentro de tu proyecto inmobiliario. A través de sensores y dispositivos inteligentes, puedes capturar datos sobre cómo los prospectos interactúan con los espacios, lo que te brinda insights valiosos para mejorar la experiencia del cliente, optimizar operaciones y aumentar las oportunidades de venta.")
                 st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="tracking2")
     with st.container():
@@ -477,7 +477,7 @@ elif st.session_state.page == "Soluciones":
         st.button("Agenda una asesoría personalizada", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="asesoria2")
 
 elif st.session_state.page == "Nosotros":
-    img_path = 'img/proyecto05.png'
+    img_path = 'img/inicio01.png'
     def get_image_base64(img_path):
         with open(img_path, "rb") as f:
             return base64.b64encode(f.read()).decode("utf-8")
@@ -522,7 +522,7 @@ elif st.session_state.page == "Nosotros":
     </div>
     """, unsafe_allow_html=True)
 
-    st.title("El Proyecto")
+    st.title("Proyecto")
     st.markdown('##### Construyendo la nueva forma de entender el avance y comportamiento inmobiliario')
     with st.container():
         col1, = st.columns(1, gap="large", border=True)
@@ -530,7 +530,7 @@ elif st.session_state.page == "Nosotros":
             st.markdown("""
                         Este proyecto está siendo construido desde cero con un enfoque claro: llevar inteligencia, automatización y datos en tiempo real a una industria que históricamente ha operado con incertidumbre.
 
-                        Como fundador, estoy desarrollando una plataforma que combina IoT y AI para monitorear tanto el avance de obras como el comportamiento en casas piloto, transformando estos datos en información clara, medible y accionable.
+                        Habilitamos una plataforma que combina IoT y AI para monitorear tanto el avance de obras como el comportamiento en casas piloto, transformando estos datos en información clara, medible y accionable.
 
                         El objetivo no es solo digitalizar procesos, sino redefinir cómo se toman decisiones en el desarrollo inmobiliario — desde la ejecución de proyectos hasta la comprensión real de cómo se habitan y utilizan los espacios."""
                         )
