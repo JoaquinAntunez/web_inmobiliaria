@@ -58,13 +58,14 @@ if st.session_state.page == "Inicio":
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px;
+            padding: 30px;
             border-radius: 12px;
-            width: 70%;
+            width: 85%;
             color: black;
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(2px);
             font-size: clamp(14px, 1.2vw, 18px);
-            max-width: 70%;
+            text-align: center;
+            max-width: 90%;
             margin: 0 auto;
         }}
 
