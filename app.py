@@ -55,8 +55,8 @@ if st.session_state.page == "Inicio":
         .caja_transparente {{
             background-color: rgba(255, 255, 255, 0.5);
             position: absolute;
-            top: 65%;
-            left: 38%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             padding: 20px;
             border-radius: 12px;
@@ -65,7 +65,7 @@ if st.session_state.page == "Inicio":
             backdrop-filter: blur(3px);
             font-size: clamp(14px, 1.2vw, 18px);
             max-width: 70%;
-             margin: 0 auto;
+            margin: 0 auto;
         }}
 
         .imagen-container {{
