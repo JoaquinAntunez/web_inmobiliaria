@@ -101,7 +101,7 @@ if st.session_state.page == "Inicio":
                 <i class="fa-solid fa-cloud"> SaaS</i>
             </div>
             <h3>TRANSFORMA DATOS EN VENTAS</h3>
-            <p>No sigas tomando decisiones por intuición y empieza a vender con datos en tiempo real.</p>
+            <p>No sigas tomando decisiones por intuición y empieza a vender tus proyecto inmobiliarios con datos en tiempo real.</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
