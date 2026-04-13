@@ -101,12 +101,19 @@ if st.session_state.page == "Inicio":
                 <i class="fa-solid fa-cloud"> SaaS</i>
             </div>
             <h3>TRANSFORMA DATOS EN VENTAS</h3>
-            <p>Convierte el comportamiento en casas piloto y el avance de obra en decisiones que impulsan resultados reales.</p>
+            <p>No sigas tomando decisiones por intuición y empieza a vender con datos en tiempo real.</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown('')
+
+
+    with st.container():
+             st.title('Deja de perder ventas sin saber por qué')
+             st.markdown('##### Estás invirtiendo millones en pilotos, diseño y equipos de venta… pero no sabes qué está haciendo que un cliente compre o se vaya.')
+             st.markdown('**Peor aún: estás tomando desiciones basadas en intuición, no en datos.**')
+
     with st.container():
         col1, = st.columns(1, gap="large")
         with col1:
@@ -114,104 +121,31 @@ if st.session_state.page == "Inicio":
                 st.session_state.page = "Soluciones"
                 st.rerun()
 
-
-    with st.container():
-             st.title('¿Por que? Nosotros', text_alignment="center")
-             st.markdown('##### Integramos todo en un solo flujo', text_alignment="center")
-
-
-
-    with st.container():
-        col1, col2,col3,  = st.columns(3, gap="small", border=True)
-        with col1:
-            st.markdown("""
-                        <div style="
-                        border:2px solid black;
-                        border-radius:12px;
-                        padding:15px;
-                        ">
-                        <h5>Captura de datos</h5>
-                        <p>Obtenemos los datos que realmente mueven tu negocio</p>
-                        </div>
-                        """, unsafe_allow_html=True, text_alignment="center")
-
-
-        with col2:
-            st.markdown("""
-                        <div style="
-                        border:2px solid black;
-                        border-radius:12px;
-                        padding:15px;
-                        ">
-                        <h5>Procesamiento inteligente</h5>
-                        <p>Transformamos datos en insights claros y utilizables.</p>
-                        </div>
-                        """, unsafe_allow_html=True, text_alignment="center")
-        with col3:
-            st.markdown("""
-                        <div style="
-                        border:2px solid black;
-                        border-radius:12px;
-                        padding:15px;
-                        ">
-                        <h5>Plataforma interactiva</h5>
-                        <p>Visualiza, entiende y actúa desde una sola herramienta</p>
-                        </div>
-                        """, unsafe_allow_html=True, text_alignment="center")
-
-        with st.container():
-            col1, col2,col3,  = st.columns(3, gap="small", border=True)
-        with col1:
-            st.markdown("""
-                        <div style="
-                        border:2px solid black;
-                        border-radius:12px;
-                        padding:15px;
-                        background-color:black;
-                        color:white;
-                        ">
-                        <h5>Reportes continuos</h5>
-                        <p>Información actualizada para decisiones diarias</p>
-                        </div>
-                        """, unsafe_allow_html=True, text_alignment="center")
-        with col2:
-            st.markdown("""
-                        <div style="
-                        border:2px solid black;
-                        border-radius:12px;
-                        padding:15px;
-                        background-color:black;
-                        color:white;
-                        ">
-                        <h5>Seguimiento estrategico</h5>
-                        <p>Te guiamos para convertir insights en acciones reales</p>
-                        </div>
-                        """, unsafe_allow_html=True, text_alignment="center")
-        with col3:
-            st.markdown("""
-                        <div style="
-                        border:2px solid black;
-                        border-radius:12px;
-                        padding:15px;
-                        background-color:black;
-                        color:white;
-                        ">
-                        <h5>Iteración continua</h5>
-                        <p>Optimizamos modelos y estrategias de forma constante</p>
-                        </div>
-                        """, unsafe_allow_html=True, text_alignment="center")
-
     st.divider()
 
     with st.container():
-        col1, col2 = st.columns(2, gap="large")
+
+            st.title("El problema")
+            st.markdown('##### Cada persona que entra a tu piloto es una oportunidad de venta. Pero hoy, estás a ciegas:')
+
+    with st.container():
+        col1, col2, col3 = st.columns(3, gap="large", border=True)
         with col1:
-            st.title("¿Qué hacemos?")
-            st.markdown('##### De datos a ventas reales')
+            st.markdown('**No sabes qué espacios generan más interés.**')
         with col2:
-            st.markdown("Capturamos el comportamiento en casas piloto y proyectos en construcción para transformarlo en decisiones que **aumentan conversiones, optimizan operaciones y mejoran la experiencia de compra**.", text_alignment="justify")
+            st.markdown('**No sabes en qué momento el cliente pierde intención.**')
+        with col3:
+            st.markdown('**No sabes si el problema viene de marketing o de la estrategia comercial.**')
 
+    st.markdown('Mientras tanto...')
+    st.markdown('**pierdes conversiones todos los días sin darte cuenta, hasta que ya es demasiado tarde para actuar.**')
 
+    with st.container():
+        col1, = st.columns(1, gap="large")
+        with col1:
+            if st.button("Agenda una asesoría personalizada", use_container_width=True):
+                st.session_state.page = "Contacto"
+                st.rerun()
 
     st.divider()
 
@@ -318,7 +252,7 @@ if st.session_state.page == "Inicio":
         col1, col2 = st.columns(2, gap="large")
     with col1:
         st.title("Nuestras soluciones")
-        st.markdown('##### Inteligencia en tiempo real para proyectos inmobiliarios')
+        st.markdown('##### Transformamos el comportamiento real de tus clientes en datos concretos.')
     with col2:
         st.markdown("Implementamos **sensores de alta precisión en casas piloto y obra** para capturar datos del comportamiento de los espacios. Nuestra plataforma procesa esta información en tiempo real y la convierte en insights accionables que permiten optimizar estrategias comerciales, mejorar la operación y tomar decisiones basadas en evidencia.", text_alignment="justify")
     st.divider()
@@ -398,7 +332,7 @@ elif st.session_state.page == "Soluciones":
     """, unsafe_allow_html=True)
 
     st.title("Nuestras soluciones")
-    st.markdown('##### Transformamos datos en decisiones inmobiliarias')
+    st.markdown('##### Transformamos el comportamiento real de tus clientes en datos concretos.')
     with st.container(border=True):
         st.markdown('Desde la captación de oportunidades hasta la evaluación de proyectos, nuestra plataforma centraliza y analiza información clave del mercado en tiempo real. Esto te permite **reducir la incertidumbre, detectar oportunidades y optimizar cada decisión**.', text_alignment="justify")
 
