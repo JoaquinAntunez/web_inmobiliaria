@@ -6,32 +6,39 @@ import urllib.parse
 
 img_logo = 'img/logo1.png'
 img_imagen = 'img/img_logo1.png'
+img_logo_negro = 'img/logo_negro.png'
 
+
+
+st.logo(img_logo_negro, size='large', link='http://localhost:8501/')
 # Crear navegación con columnas (alternativa más simple)
 
-st.logo(img_logo, size='large', link='http://localhost:8501/')
+
 
 if "page" not in st.session_state:
     st.session_state.page = "Inicio"
 
 page = st.session_state.page
 
+# permite que el sidebar quede en color oscuro azul
+
+
 
 with st.sidebar:
     st.title("Menú")
-
-    if st.button("Inicio", use_container_width=True):
-        st.session_state.page = "Inicio"
-        st.rerun()
-    if st.button("Soluciones", use_container_width=True):
-        st.session_state.page = "Soluciones"
-        st.rerun()
-    if st.button("Proyecto", use_container_width=True):
-        st.session_state.page = "Nosotros"
-        st.rerun()
-    if st.button("Contacto", use_container_width=True):
-        st.session_state.page = "Contacto"
-        st.rerun()
+    with st.container(border=True):
+        if st.button("Inicio", use_container_width=True):
+            st.session_state.page = "Inicio"
+            st.rerun()
+        if st.button("Soluciones", use_container_width=True):
+            st.session_state.page = "Soluciones"
+            st.rerun()
+        if st.button("Proyecto", use_container_width=True):
+            st.session_state.page = "Nosotros"
+            st.rerun()
+        if st.button("Contacto", use_container_width=True):
+            st.session_state.page = "Contacto"
+            st.rerun()
 
 
 
@@ -576,7 +583,7 @@ elif st.session_state.page == "Contacto":
 st.divider()
 # termina el contenido de la pagina, se puede agregar más contenido a cada sección según sea necesario
 with st.container(border=True, horizontal=True, horizontal_alignment="center"):
-        st.image("img/logo1.png")
+        st.image("img/logo4.png")
         st.markdown("Data en vivo para decisiones inmobiliarias", text_alignment="center")
 st.markdown("""
     <div style="display:flex; justify-content:center; margin-top:20px;">
