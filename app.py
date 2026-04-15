@@ -119,7 +119,7 @@ if st.session_state.page == "Inicio":
     with st.container():
              st.title('Deja de perder ventas sin saber por qué')
              st.markdown('##### Estás invirtiendo millones en pilotos, diseño y equipos de venta… pero no sabes qué está haciendo que un cliente compre o se vaya.')
-             st.markdown('**:red[Peor aún]: estás tomando desiciones basadas en intuición, no en datos.**')
+             st.markdown('**:red[Peor aún] : estás tomando desiciones basadas en intuición, no en datos.**')
 
     with st.container():
         col1, = st.columns(1, gap="large")
@@ -136,9 +136,9 @@ if st.session_state.page == "Inicio":
             st.markdown('##### Cada persona que entra a tu piloto es una oportunidad de venta. Pero hoy, estás a ciegas:')
             st.markdown('**- No sabes qué espacios generan más interés.**')
             st.markdown('**- No sabes en qué momento el cliente pierde intención.**')
-            st.markdown('**-No sabes si el problema viene de marketing o de la estrategia comercial.**')
+            st.markdown('**-No sabes si el problema viene de marketing o de estrategia comercial.**')
 
-    st.markdown('**:red[Mientras tanto]...**')
+    st.markdown('**:red[Mientras tanto] ...**')
     st.markdown('**Pierdes conversiones todos los días sin darte cuenta, hasta que ya es demasiado tarde para actuar.**'.upper())
 
     with st.container():
