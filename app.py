@@ -10,7 +10,7 @@ img_logo_negro = 'img/logo_negro.png'
 
 
 
-st.logo(img_logo_negro, size='large', link='http://localhost:8501/')
+st.logo(img_logo_negro, size='large', link='http://www.techinmo.cl/')
 # Crear navegación con columnas (alternativa más simple)
 
 
