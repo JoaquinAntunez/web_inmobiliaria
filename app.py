@@ -134,7 +134,7 @@ if st.session_state.page == "Inicio":
 
             st.title("El problema")
             st.markdown('##### Cada persona que entra a tu piloto es una oportunidad de venta. Pero hoy, estás a ciegas:')
-            st.markdown('**- No sabes qué espacios generan más interés.**')
+            st.markdown('**- No sabes cuanto es el tiempo promedio de tus clientes en las casas piloto.**')
             st.markdown('**- No sabes en qué momento el cliente pierde intención.**')
             st.markdown('**-No sabes si el problema viene de marketing o de estrategia comercial.**')
 
@@ -336,7 +336,6 @@ elif st.session_state.page == "Soluciones":
     st.markdown('##### Transformamos el comportamiento real de tus clientes en datos concretos.')
     with st.container(border=True):
         st.markdown('Desde la captación de oportunidades hasta la evaluación de proyectos, nuestra plataforma centraliza y analiza información clave del mercado en tiempo real. Esto te permite **reducir la incertidumbre, detectar oportunidades y optimizar cada decisión**.', text_alignment="justify")
-
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
         with col1:
