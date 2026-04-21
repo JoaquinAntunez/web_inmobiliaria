@@ -589,7 +589,7 @@ st.markdown("""
             <a href="https://wa.me/+56984003382" target="_blank">
                 <button style="background-color:#ffffff; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><i class="fa-solid fa-phone"> </i></button>
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joaquin.antunezuribe@gmail.com" target="_blank">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@techinmo.cl" target="_blank">
                 <button style="background-color:#ffffff; color:black; border:none; padding:2px 10px; border-radius:8px; cursor:pointer; font-size:25px; margin-right:20px;"><i class="fa-solid fa-envelope"> </i></button>
             </a>
     </div>
