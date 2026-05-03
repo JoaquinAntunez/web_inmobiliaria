@@ -3,7 +3,6 @@ import base64
 import urllib.parse
 
 
-
 img_logo = 'img/logo1.png'
 img_imagen = 'img/img_logo1.png'
 img_logo_negro = 'img/logo_negro.png'
@@ -19,6 +18,7 @@ if "page" not in st.session_state:
     st.session_state.page = "Inicio"
 
 page = st.session_state.page
+
 
 # permite que el sidebar quede en color oscuro azul
 
@@ -119,7 +119,7 @@ if st.session_state.page == "Inicio":
     with st.container():
              st.title('Deja de perder ventas sin saber por qué')
              st.markdown('##### Estás invirtiendo millones en pilotos, diseño y equipos de venta… pero no sabes qué está haciendo que un cliente compre o se vaya.')
-             st.markdown('**:red[Peor aún] : estás tomando desiciones basadas en intuición, no en datos.**')
+             st.markdown('**:red[Peor aún] : estás tomando decisiones basadas en intuición, no en datos.**')
 
     with st.container():
         col1, = st.columns(1, gap="large")
@@ -261,7 +261,7 @@ if st.session_state.page == "Inicio":
         col1, col2, col3 = st.columns(3, gap="large", border=True)
     with col1:
         st.subheader("Benchmark online")
-        st.caption('Ve más allá de tu proyecto, analiza el mercado y acúa a tiempo ')
+        st.caption('Ve más allá de tu proyecto, analiza el mercado y actúa a tiempo ')
         with st.popover("Mas información"):
             st.subheader("Benchmark online", text_alignment="justify")
             st.write("El benchmark online es una herramienta que permite comparar el desempeño de tu proyecto inmobiliario con otros proyectos similares en el mercado. A través de datos en tiempo real, puedes analizar tendencias, identificar oportunidades y tomar decisiones informadas para optimizar tus ventas y operaciones.")
@@ -286,7 +286,6 @@ if st.session_state.page == "Inicio":
 
 
 elif st.session_state.page == "Soluciones":
-
     img_path = 'img/soluciones_img.png'
     def get_image_base64(img_path):
         with open(img_path, "rb") as f:
@@ -340,7 +339,7 @@ elif st.session_state.page == "Soluciones":
         col1, col2, col3 = st.columns(3, gap="large", border=True)
         with col1:
             st.subheader("Benchmark online", text_alignment="justify")
-            st.caption('Ve más allá de tu proyecto, analiza el mercado y acúa a tiempo ')
+            st.caption('Ve más allá de tu proyecto, analiza el mercado y actúa a tiempo ')
             with st.popover("Mas información"):
                 st.subheader("Benchmark online", text_alignment="justify")
                 st.write("El benchmark online es una herramienta que permite comparar el desempeño de tu proyecto inmobiliario con otros proyectos similares en el mercado. A través de datos en tiempo real, puedes analizar tendencias, identificar oportunidades y tomar decisiones informadas para optimizar tus ventas y operaciones.")
