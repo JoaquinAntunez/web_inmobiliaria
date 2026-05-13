@@ -5,7 +5,7 @@ import urllib.parse
 
 img_logo = 'img/logo1.png'
 img_imagen = 'img/img_logo1.png'
-img_logo_negro = 'img/logo_negro.png'
+img_logo_negro = 'img/logo_transparente.png'
 
 
 
