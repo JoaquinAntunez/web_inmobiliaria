@@ -50,7 +50,7 @@ st.markdown("""
 
 # Mostrar contenido según la página
 if st.session_state.page == "Inicio":
-    img_path = 'img/inicio03.png'
+    img_path = 'img/fff.webp'
     def get_image_base64(img_path):
         with open(img_path, "rb") as f:
             return base64.b64encode(f.read()).decode("utf-8")
@@ -69,7 +69,7 @@ if st.session_state.page == "Inicio":
             border-radius: 12px;
             width: 85%;
             color: black;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(4px);
             font-size: clamp(14px, 1.2vw, 18px);
             text-align: center;
             max-width: 90%;
