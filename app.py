@@ -508,7 +508,7 @@ elif st.session_state.page == "Nosotros":
     st.button("Mas información", use_container_width=True, on_click=lambda: st.session_state.update(page="Soluciones"), key="asesoria4")
 
 elif st.session_state.page == "Contacto":
-    img_path2 = 'img/contacto02.png'
+    img_path2 = 'img/f2.webp'
     def get_image_base64(img_path2):
         with open(img_path2, "rb") as f:
             return base64.b64encode(f.read()).decode("utf-8")
