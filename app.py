@@ -133,7 +133,7 @@ if st.session_state.page == "Inicio":
     with st.container():
 
             st.title("El problema")
-            st.markdown('##### Cada persona que entra a tu piloto es una oportunidad de venta. Pero hoy, estás a ciegas:')
+            st.markdown('##### Cada persona que entra a tu piloto es una oportunidad de venta. Pero hoy, estás a ciegas')
             st.markdown('**- No sabes cuanto es el tiempo promedio de tus clientes en las casas piloto.**')
             st.markdown('**- No sabes en qué momento el cliente pierde intención.**')
             st.markdown('**-No sabes si el problema viene de marketing o de estrategia comercial.**')
@@ -217,7 +217,7 @@ if st.session_state.page == "Inicio":
     <div class="slide">
         <div class="text">
             <h2>IoT en terreno</h2>
-            <p>Captura en tiempo real lo que ocurre en casas piloto y obra.</p>
+            <p>Captura en tiempo real lo que ocurre en casas piloto.</p>
         </div>
         <div class="image">
             <img src= {img_uri}>
@@ -255,7 +255,7 @@ if st.session_state.page == "Inicio":
         st.title("Nuestras soluciones")
         st.markdown('##### Transformamos el comportamiento real de tus clientes en datos concretos.')
     with col2:
-        st.markdown("Implementamos **sensores de alta precisión en casas piloto y obra** para capturar datos del comportamiento de los espacios. Nuestra plataforma procesa esta información en tiempo real y la convierte en insights accionables que permiten optimizar estrategias comerciales, mejorar la operación y tomar decisiones basadas en evidencia.", text_alignment="justify")
+        st.markdown("Implementamos **sensores de alta precisión en casas piloto** para capturar datos del comportamiento de los espacios. Nuestra plataforma procesa esta información en tiempo real y la convierte en insights accionables que permiten optimizar estrategias comerciales, mejorar la operación y tomar decisiones basadas en evidencia.", text_alignment="justify")
     st.divider()
     with st.container():
         col1, col2, col3 = st.columns(3, gap="large", border=True)
@@ -264,6 +264,7 @@ if st.session_state.page == "Inicio":
         st.caption('Ve más allá de tu proyecto, analiza el mercado y actúa a tiempo ')
         with st.popover("Mas información"):
             st.subheader("Benchmark online", text_alignment="justify")
+            st.markdown(':red[Próximamente disponible con datos agregados de múltiples inmobiliarias.]')
             st.write("El benchmark online es una herramienta que permite comparar el desempeño de tu proyecto inmobiliario con otros proyectos similares en el mercado. A través de datos en tiempo real, puedes analizar tendencias, identificar oportunidades y tomar decisiones informadas para optimizar tus ventas y operaciones.")
             st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="benchmark")
     with col2:
@@ -271,7 +272,7 @@ if st.session_state.page == "Inicio":
         st.caption('Encuentra oportunidades para aumentar las  utilidades de tu proyecto')
         with st.popover("Mas información"):
             st.subheader("Gestión de conversión", text_alignment="justify")
-            st.write("La gestión de conversión es un proceso que se enfoca en optimizar cada etapa del embudo de ventas para convertir más prospectos en clientes. Utilizando datos en tiempo real, puedes identificar puntos de fricción, mejorar la experiencia del cliente y aumentar las tasas de conversión, lo que se traduce en mayores utilidades para tu proyecto inmobiliario.")
+            st.write("La gestión de conversión es un proceso que se enfoca en optimizar cada etapa del embudo de ventas para convertir más prospectos en clientes. Utilizando datos en tiempo real, puedes identificar puntos de fricción, mejorar la experiencia del cliente y aumentar las tasas de conversión, lo que se traduce en mejores oportunidades para tu proyecto inmobiliario.")
             st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="conversion")
     with col3:
         st.subheader("In-project Tracking")
@@ -342,6 +343,7 @@ elif st.session_state.page == "Soluciones":
             st.caption('Ve más allá de tu proyecto, analiza el mercado y actúa a tiempo ')
             with st.popover("Mas información"):
                 st.subheader("Benchmark online", text_alignment="justify")
+                st.markdown(':red[Próximamente disponible con datos agregados de múltiples inmobiliarias.]')
                 st.write("El benchmark online es una herramienta que permite comparar el desempeño de tu proyecto inmobiliario con otros proyectos similares en el mercado. A través de datos en tiempo real, puedes analizar tendencias, identificar oportunidades y tomar decisiones informadas para optimizar tus ventas y operaciones.")
                 st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="benchmark2")
         with col2:
@@ -365,7 +367,7 @@ elif st.session_state.page == "Soluciones":
             st.caption('Monitorea el flujo de personas en tu proyecto, en tiempo real')
             with st.popover("Mas información"):
                 st.subheader("Conteo de personas", text_alignment="justify")
-                st.write("El conteo de personas es una solución que permite monitorear en tiempo real el flujo de personas dentro de tu proyecto inmobiliario. A través de sensores inteligentes, puedes obtener datos precisos sobre la cantidad de visitantes, su comportamiento y patrones de movimiento, lo que te brinda insights valiosos para optimizar la experiencia del cliente, mejorar la seguridad y aumentar las oportunidades de venta.")
+                st.write("El conteo de personas es una solución que permite monitorear en tiempo real el flujo de personas dentro de tu proyecto inmobiliario. A través de sensores inteligentes, puedes obtener datos precisos sobre la cantidad de visitantes, su comportamiento y patrones de movimiento, lo que te brinda insights valiosos para optimizar la experiencia del cliente y aumentar las oportunidades de venta.")
                 st.button("Agenda una asesoría", use_container_width=True, on_click=lambda: st.session_state.update(page="Contacto"), key="conteo")
         with col2:
             st.subheader('Forecasting de datos')
@@ -463,7 +465,7 @@ elif st.session_state.page == "Nosotros":
             st.markdown("""
                         Este proyecto está siendo construido desde cero con un enfoque claro: llevar inteligencia, automatización y datos en tiempo real a una industria que históricamente ha operado con incertidumbre.
 
-                        Habilitamos una plataforma que combina IoT y AI para monitorear tanto el avance de obras como el comportamiento en casas piloto, transformando estos datos en información clara, medible y accionable.
+                        Habilitamos una plataforma que combina IoT y AI para monitorear el comportamiento en casas piloto, transformando estos datos en información clara, medible y accionable.
 
                         El objetivo no es solo digitalizar procesos, sino redefinir cómo se toman decisiones en el desarrollo inmobiliario — desde la ejecución de proyectos hasta la comprensión real de cómo se habitan y utilizan los espacios."""
                         )
@@ -481,7 +483,7 @@ elif st.session_state.page == "Nosotros":
             st.markdown("""
                         ##### Captura de datos en terreno
 
-                        Implementamos sensores IoT para obtener información directa desde obras y casas piloto, sin depender de reportes manuales.
+                        Implementamos sensores IoT para obtener información directa, sin depender de reportes manuales.
                         """)
 
     with st.container(border=True):
